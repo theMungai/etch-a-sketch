@@ -7,7 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const sketchArea = document.querySelector(".sketch-area");
     sketchArea.style.height = `${gridArea}px`;
     sketchArea.style.width = `${gridArea}px`;
-    
+
+    const modal = document.querySelector(".pop-up-modal");    
 
     function createGridCells() {
         
@@ -51,18 +52,49 @@ document.addEventListener('DOMContentLoaded', () => {
             const resetButton = document.querySelector('#reset');
             resetButton.addEventListener('click', () => {
                 square.style.backgroundColor = "white"
-            })
+            });
+            
+           
+        };
 
-             
-        }
     }
     createGridCells();
+
+    const showModalButton = document.querySelector("#show-pop-up");
+    showModalButton.addEventListener('click', () => {
+        modal.style.display = "block"
+    });
+
+
+    const resizingButton = document.querySelector("#resize-action");
+    resizingButton.addEventListener('click', () => {
+        
+        const userInput = document.querySelector("#user-input");
+        const errorMessage = document.querySelector("#message");
+        
+        if(userInput.value = ""){
+            errorMessage.textContent = ""
+        }
+
+        else if(userInput.value >= 2 || userInput.value <= 100){
+            
+            
+        }
+
+        else if(userInput.value < 2 ){
+            errorMessage.textContent = "Invalid input"
+        }
+
+        else{
+            errorMessage.textContent = "Too many squares"
+        }
+    });
+    
     
     document.querySelector("body").addEventListener('click', () => {
         click = !click
     })
-
-
-
-
 });
+
+
+    

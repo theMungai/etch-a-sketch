@@ -16,13 +16,15 @@
 </head>
 <body>
 
-    <h1>Etch-a-sketch</h1>
+    <div class="header">
+        <h1>Etch-a-sketch</h1>
+    </div>
     <div class="sketch-area">
 
     </div>
 
     <div class="buttons-container">
-        <button id="black-button" onclick="changeToBlack()">Black <i class="fa-solid fa-square"></i></button>
+        <button id="black-button">Black <i class="fa-solid fa-square"></i></button>
         <button id="erase">Erase<i class="fa-solid fa-eraser"></i></button>
         <button id="shade">Gray<i class="fa-regular fa-square"></i></button>
         <button id="random">Random <i class="fa-solid fa-palette"></i></button>
@@ -35,8 +37,22 @@
     </div>
 
     <div class="resize-grid-cells">
-        <input type="text" id="input" placeholder="Resize Sketch Area">
-        <button>Resize</button>
+        <button id="show-pop-up">Resize the grid</button>
+    </div>
+
+    <div class="pop-up-modal">
+        <div class="modal-container">
+            <h1>Let's Have Fun 💃🏻🕺🏽</h1>
+            <div class="pop-up-image">
+                <img src="favicon.png" alt="">
+            </div>
+
+            <div class="pop-up-button">
+                <input type="number" placeholder="Resize the Grid" id="user-input">
+                <button id="resize-action">Resize</button>
+                <p id="message"></p>
+            </div>
+        </div>
     </div>
     
 
